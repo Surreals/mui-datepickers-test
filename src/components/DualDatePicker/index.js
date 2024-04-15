@@ -36,6 +36,7 @@ class TwoDatePickers extends React.Component {
           autoOk
           formatDate={initialSecondDate ? () => "" : void 0}
           hintText="Select second date"
+          minDate={firstDate} // added for better UX
           onChange={this.handleSecondDateChange}
           value={secondDate || initialSecondDate}
         />
