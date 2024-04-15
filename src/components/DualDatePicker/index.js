@@ -27,18 +27,17 @@ class TwoDatePickers extends React.Component {
   };
 
   render() {
-    const { firstDate, secondDate, initialSecondDate, keySecondDatePicker } = this.state;
+    const { firstDate, secondDate, initialSecondDate } = this.state;
 
     return (
       <div>
         <DatePicker autoOk hintText="Select first date" onChange={this.handleFirstDateChange} value={firstDate} />
         <DatePicker
-          key={keySecondDatePicker}
           autoOk
           formatDate={initialSecondDate ? () => "" : void 0}
           hintText="Select second date"
           onChange={this.handleSecondDateChange}
-          value={initialSecondDate || secondDate}
+          value={secondDate || initialSecondDate}
         />
       </div>
     );
